@@ -1,0 +1,214 @@
+/* styles.css */
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+
+header {
+    background-color: #900020;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column; /* Cambio en la dirección de los elementos */
+    align-items: center;
+}
+
+header img {
+  max-width: 262px; /* Ajusta el tamaño máximo del logo */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  margin: 40px; /* Margen para separar el logo del borde de la ventana */
+  position: absolute; /* Posición absoluta para que podamos colocarlo en la esquina */
+  top: -228px; /* Distancia desde la parte superior */
+  left: 1000px;  /* Distancia desde la parte izquierda */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 0.5rem;
+    margin-top: 0.5rem; /* Ajustar el margen superior */
+    width: 70%;
+    max-width: 300px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+#searchInput::placeholder {
+    color: #999;
+}
+
+#searchInput:focus {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#bookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.book-card {
+    background-color: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.book-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff6347;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+.read-link {
+    display: inline-block;
+    background-color: #ff6347;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+	
+}
+
+.download-link:hover {
+    background-color: #ff4b29;
+}
+
+/* Agrega esta regla para establecer un tamaño fijo a todas las imágenes de portada */
+.book-cover {
+    width: 200px; /* Ajusta el ancho deseado */
+    height: 300px; /* Ajusta la altura deseada */
+    object-fit: cover; /* Escalar la imagen para que cubra el contenedor */
+}
+/* Estilos para el menú de navegación */
+.navigation {
+    position: absolute;
+    top: 0;
+    left: 0; /* Cambia 'right' por 'left' */
+    padding: 3rem;
+    background-color: #900020;
+}
+
+.navigation li {
+    margin-right: 1.5rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ff6347;
+}
+
+
+/* Estilos para el menú de hamburguesa */
+.menu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu-open .bar {
+    background-color: white; /* Añadido */
+}
+
+.menu-open + .menu-list {
+    display: block;
+    position: absolute;
+    top: 60px; /* Ajusta la posición hacia arriba */
+    right: -150px; /* Ajusta la posición hacia la derecha */
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px; /* Añade bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade sombra */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.menu-list li {
+    margin-bottom: 1rem; /* Ajusta el espacio entre elementos de la lista */
+}
+
+.menu-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu-list a:hover {
+    color: #ff6347;
+}
+
+
